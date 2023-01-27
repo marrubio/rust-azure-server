@@ -1,0 +1,98 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "francecentral"
+        },
+        "networkInterfaceName": {
+            "value": "rust-server-vm671"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "networkSecurityGroupName": {
+            "value": "rust-server-vm-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkName": {
+            "value": "rust-server-rg-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.0.0.0/16"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/24"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName": {
+            "value": "rust-server-vm-public-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Static"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "pipDeleteOption": {
+            "value": "Delete"
+        },
+        "virtualMachineName": {
+            "value": "rust-server-vm"
+        },
+        "virtualMachineComputerName": {
+            "value": "rust-server-vm"
+        },
+        "virtualMachineRG": {
+            "value": "rust-server-rg"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "osDiskDeleteOption": {
+            "value": "Delete"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2as_v4"
+        },
+        "nicDeleteOption": {
+            "value": "Delete"
+        },
+        "adminUsername": {
+            "value": "rustadmin"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "customData": {
+            "value": null
+        }
+    }
+}
