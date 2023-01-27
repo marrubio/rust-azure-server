@@ -28,7 +28,33 @@
                         "destinationAddressPrefix": "*",
                         "destinationPortRange": "22"
                     }
-                }
+                },
+                {
+                    "name": "RustServer",
+                    "properties": {
+                        "priority": 301,
+                        "protocol": "UDP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "28015"
+                    }
+                },
+                {
+                    "name": "RustRCON",
+                    "properties": {
+                        "priority": 302,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "28016"
+                    }
+                }                
             ]
         },
         "subnetName": {
@@ -39,7 +65,7 @@
         },
         "addressPrefixes": {
             "value": [
-                "10.0.0.0/16"
+                "192.168.1.0/23"
             ]
         },
         "subnets": {
@@ -47,7 +73,7 @@
                 {
                     "name": "default",
                     "properties": {
-                        "addressPrefix": "10.0.0.0/24"
+                        "addressPrefix": "192.168.1.0/24"
                     }
                 }
             ]
@@ -89,7 +115,7 @@
             "value": "rustadmin"
         },
         "adminPassword": {
-            "value": null
+            "value": "Rustadmin123"
         },
         "customData": {
             "value": null
